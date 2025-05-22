@@ -1,0 +1,15 @@
+.w-10 {
+  width: 8%;
+}
+
+nav {
+  background-image: linear-gradient(to left, #000000, #000000);
+  color: aliceblue;
+}
+nav ul li {
+  color: aliceblue;
+}
+
+.bgg {
+  background-color: #fe0468;
+}

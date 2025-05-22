@@ -1,0 +1,34 @@
+a {
+  color: rgb(250, 98, 115);
+  transition: all 0.3s;
+}
+
+a:hover {
+  color: rgb(235, 16, 89);
+}
+.facebook {
+  background-color: #3b5998;
+}
+.insta {
+  background-color: #ac2bac;
+}
+.linkedin {
+  background-color: #0082ca;
+}
+
+.google {
+  background-color: #dd4b39;
+}
+.github {
+  background-color: #333333;
+}
+.twitter {
+  background-color: #55acee;
+}
+.social a {
+  transition: all 0.4s;
+}
+
+.social a:hover {
+  transform: scale(1.1) translateY(0.25rem);
+}

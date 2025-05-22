@@ -1,0 +1,8 @@
+.bgclr {
+  background: radial-gradient(
+    ellipse at right top,
+    #ff7eb2 0%,
+
+    #ff82a5 100%
+  );
+}

@@ -1,0 +1,202 @@
+<section class="min-vh-100 d-flex flex-column">
+  <h2
+    class="testshadow text-center px-5 my-2 rounded-3 blur d-inline-block mx-auto py-3"
+  >
+    Wellcom in Note app
+  </h2>
+  <div class="container d-flex align-items-center">
+    <form
+      class="w-100 form-floating p-3 p border-1 border border-white rounded-3"
+      [formGroup]="registerForm"
+      (ngSubmit)="submitRegister()"
+    >
+      <h2 class="testshadow text-center">Register Now</h2>
+      @let namecontrol =registerForm.get('name');
+
+      <div class="my-3 form-floating">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingInput"
+          [class.is-valid]="!namecontrol?.errors"
+          [class.is-invalid]="
+            namecontrol?.errors && (namecontrol?.dirty || namecontrol?.touched)
+          "
+          formControlName="name"
+          placeholder="Enter your Name"
+        />
+        <label for="floatingInput">Name</label>
+
+        @if(namecontrol?.getError('required')){
+        <div
+          class="text-capitalize fw-medium px-4 py-2 my-2 rounded-5 invalid-feedback"
+        >
+          field it is required.
+        </div>
+        } @else if(namecontrol?.getError('minlength')){
+        <div
+          id="name"
+          class="text-capitalize fw-medium px-4 py-2 my-2 rounded-5 invalid-feedback"
+        >
+          minmum Length of charachter is 3
+        </div>
+        }@else if(namecontrol?.getError('maxlength')){
+        <div
+          id="name"
+          class="text-capitalize fw-medium px-4 py-2 my-2 rounded-5 invalid-feedback"
+        >
+          max Length of character should be write is 20 char
+        </div>
+        }
+      </div>
+      @let emailcontrol =registerForm.get('email');
+
+      <div class="my-3 form-floating">
+        <input
+          type="email"
+          class="form-control"
+          id="floatingInput"
+          [class.is-valid]="!emailcontrol?.errors"
+          [class.is-invalid]="
+            emailcontrol?.errors &&
+            (emailcontrol?.dirty || emailcontrol?.touched)
+          "
+          formControlName="email"
+          placeholder="name@example.com"
+        />
+        <label for="floatingInput">Email address</label>
+
+        @if(emailcontrol?.getError('required')){
+        <div
+          class="text-capitalize fw-medium px-4 py-2 my-2 rounded-5 invalid-feedback"
+        >
+          field it is required.
+        </div>
+        } @else if(emailcontrol?.getError('email')){
+        <div
+          id="name"
+          class="text-capitalize fw-medium px-4 py-2 my-3 rounded-5 invalid-feedback"
+        >
+          Email Must Follow The instruction of writing Ex:asdf32&#64;gmail.com
+        </div>
+        }
+      </div>
+
+      @let passwordcontrol =registerForm.get('password');
+      <div class="form-floating">
+        <input
+          type="password"
+          [class.is-valid]="!passwordcontrol?.errors"
+          [class.is-invalid]="
+            passwordcontrol?.errors &&
+            (passwordcontrol?.dirty || passwordcontrol?.touched)
+          "
+          class="form-control"
+          id="floatingPassword"
+          placeholder="password"
+          formControlName="password"
+        />
+        <label for="floatingPassword">Password</label>
+
+        @if(passwordcontrol?.getError('required')){
+
+        <div
+          class="text-capitalize fw-medium px-4 py-2 my-2 rounded-5 invalid-feedback"
+        >
+          this field it is required.
+        </div>
+        } @else if(passwordcontrol?.getError('pattern')){
+        <div
+          class="text-capitalize fw-medium px-4 my-2 rounded-5 invalid-feedback"
+        >
+          <ul>
+            <li class="p-0 m-1 text-capitalize fw-medium">
+              password mast start with capital charachter
+            </li>
+            <li class="p-0 m-1 text-capitalize fw-medium">
+              Must have at least special character like &#64; # &#63; &#60;
+            </li>
+            <li class="p-0 m-1 text-capitalize fw-medium">
+              Must contain at least one Number
+            </li>
+          </ul>
+        </div>
+        }
+      </div>
+      @let agecontrol=registerForm.get('age');
+
+      <div class="my-2 form-floating">
+        <input
+          [class.is-valid]="!agecontrol?.errors"
+          [class.is-invalid]="
+            agecontrol?.errors && (agecontrol?.dirty || agecontrol?.touched)
+          "
+          id="floatingInput"
+          type="number"
+          placeholder="Enter your Age"
+          class="form-control mb-3"
+          formControlName="age"
+        />
+        <label for="age  floatingInput">Enter Age her</label>
+        @if(agecontrol?.getError('required')){
+        <div
+          class="text-capitalize fw-medium px-4 py-2 my-2 rounded-5 invalid-feedback"
+        >
+          this field it is required.
+        </div>
+        } @else if(agecontrol?.getError('pattern')){
+        <div
+          class="text-capitalize fw-medium px-4 my-2 rounded-5 invalid-feedback"
+        >
+          your number must be an Egyption number
+          <p>Ex:01023456789</p>
+        </div>
+        }@else if(agecontrol?.getError('pattern')){
+        <div
+          class="text-capitalize fw-medium px-4 my-2 rounded-5 invalid-feedback"
+        >
+          your number must be an Egyption number
+          <p>Ex:01023456789</p>
+        </div>
+        }
+      </div>
+
+      @let numbercontrol=registerForm.get('phone');
+      <div class="my-3 form-floating">
+        <input
+          type=""
+          class="form-control"
+          id="floatingInput"
+          [class.is-valid]="!numbercontrol?.errors"
+          [class.is-invalid]="
+            numbercontrol?.errors &&
+            (numbercontrol?.dirty || numbercontrol?.touched)
+          "
+          formControlName="phone"
+          placeholder="Egyption Number"
+        />
+        <label for="floatingInput"> Number</label>
+
+        @if(numbercontrol?.getError('required')){
+        <div
+          class="text-capitalize fw-medium px-4 py-2 my-2 rounded-5 invalid-feedback"
+        >
+          this field it is required.
+        </div>
+        } @else if(numbercontrol?.getError('pattern')){
+        <div
+          class="text-capitalize fw-medium px-4 my-2 rounded-5 invalid-feedback"
+        >
+          your number must be an Egyption number
+          <p>Ex:01023456789</p>
+        </div>
+        }
+      </div>
+      <app-button>
+        <span>Sign Up</span>
+      </app-button>
+
+      <!-- <button type="submit" class="btn my-2 btn-info">Sign Up</button> -->
+    </form>
+  </div>
+</section>

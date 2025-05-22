@@ -1,0 +1,49 @@
+.card {
+  max-height: 20rem;
+  box-shadow: 0.03em 0.5em 1.563em rgba(14, 0, 6, 0.527);
+  border-radius: 1rem;
+  transition: all 0.6s ease;
+  overflow-y: hidden;
+  color: #ff2e81d4;
+  background: #000000;
+}
+
+.card p {
+  height: 7rem;
+  scroll-behavior: smooth;
+  cursor: pointer;
+}
+.card p::-webkit-scrollbar {
+  width: 4px;
+}
+
+.card p::-webkit-scrollbar-track {
+  background-color: #ffffff;
+  width: 2px;
+  border-radius: 5px;
+}
+.card p::-webkit-scrollbar-thumb {
+  background-color: #ff0379;
+  width: 2px;
+  border-radius: 5px;
+}
+
+.txtclr {
+  color: #ff2e81d4;
+}
+
+.bgclr,
+.green {
+  background: #ff2e81d4;
+}
+
+.card:hover {
+  transform: scale(1.05);
+
+  color: aliceblue;
+
+  background-image: url(../../../../public/images/27230.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

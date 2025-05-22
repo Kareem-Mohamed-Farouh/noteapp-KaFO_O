@@ -1,0 +1,96 @@
+<section class="min-vh-100 d-flex flex-column">
+  <h2
+    class="testshadow text-center px-5 my-2 rounded-3 blur d-inline-block mx-auto py-3"
+  >
+    Wellcom in Note app
+  </h2>
+  <div class="container d-flex align-items-center">
+    <form
+      class="w-100 form-floating p-3 p border-1 border border-white rounded-3"
+      [formGroup]="loginForm"
+      (ngSubmit)="submitRegister()"
+    >
+      <h2 class="testshadow text-center">Login Now</h2>
+
+      @let emailcontrol =loginForm.get('email');
+
+      <div class="my-3 form-floating">
+        <input
+          type="email"
+          class="form-control"
+          id="floatingInput"
+          [class.is-valid]="!emailcontrol?.errors"
+          [class.is-invalid]="
+            emailcontrol?.errors &&
+            (emailcontrol?.dirty || emailcontrol?.touched)
+          "
+          formControlName="email"
+          placeholder="name@example.com"
+        />
+        <label for="floatingInput">Email address</label>
+
+        @if(emailcontrol?.getError('required')){
+        <div
+          class="text-capitalize fw-medium px-4 py-2 my-2 rounded-5 invalid-feedback"
+        >
+          field it is required.
+        </div>
+        } @else if(emailcontrol?.getError('email')){
+        <div
+          id="name"
+          class="text-capitalize fw-medium px-4 py-2 my-3 rounded-5 invalid-feedback"
+        >
+          Email Must Follow The instruction of writing Ex:asdf32&#64;gmail.com
+        </div>
+        }
+      </div>
+
+      @let passwordcontrol =loginForm.get('password');
+      <div class="form-floating">
+        <input
+          type="password"
+          [class.is-valid]="!passwordcontrol?.errors"
+          [class.is-invalid]="
+            passwordcontrol?.errors &&
+            (passwordcontrol?.dirty || passwordcontrol?.touched)
+          "
+          class="form-control"
+          id="floatingPassword"
+          placeholder="password"
+          formControlName="password"
+        />
+        <label for="floatingPassword">Password</label>
+
+        @if(passwordcontrol?.getError('required')){
+
+        <div
+          class="text-capitalize fw-medium px-4 py-2 my-2 rounded-5 invalid-feedback"
+        >
+          this field it is required.
+        </div>
+        } @else if(passwordcontrol?.getError('pattern')){
+        <div
+          class="text-capitalize fw-medium px-4 my-2 rounded-5 invalid-feedback"
+        >
+          <ul>
+            <li class="p-0 m-1 text-capitalize fw-medium">
+              password mast start with capital charachter
+            </li>
+            <li class="p-0 m-1 text-capitalize fw-medium">
+              Must have at least special character like &#64; # &#63; &#60;
+            </li>
+            <li class="p-0 m-1 text-capitalize fw-medium">
+              Must contain at least one Number
+            </li>
+          </ul>
+        </div>
+        }
+      </div>
+
+      <app-button>
+        <span>Login</span>
+      </app-button>
+      <!-- <button type="submit" class="btn my-2 btn-info">Login</button> -->
+    </form>
+  </div>
+</section>

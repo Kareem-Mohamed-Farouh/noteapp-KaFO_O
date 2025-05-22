@@ -1,0 +1,22 @@
+section {
+  background-image: url(../../../../public/images/pexels-lum3n-44775-399161.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.testshadow {
+  color: white;
+  text-shadow: 0.225rem 0.225rem 0.125rem rgb(252, 196, 225);
+}
+
+form,
+.blur {
+  background: rgb(241, 182, 189);
+  backdrop-filter: invert(80%);
+  backdrop-filter: blur(20px);
+}
+@media only screen and (min-width: 900px) {
+  form {
+    width: 70% !important;
+  }
+}

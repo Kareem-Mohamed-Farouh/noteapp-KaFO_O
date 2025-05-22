@@ -1,0 +1,165 @@
+<section class="min-vh-100 w-100">
+  <div
+    class="bg-black pb-3 d-flex justify-content-center flex-column align-items-center"
+  >
+    <span data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="button">
+      <app-button><span>Add new NOTE 📓🖋️</span></app-button>
+    </span>
+    <p class="text-white text-center fs-5 fw-light my-2">
+      Knowledge is a prey, and writing is its tether. So bind your catches with
+      firm ropes.<br />
+      It is sheer folly to hunt a gazelle, Only to set it free among the people.
+    </p>
+  </div>
+
+  <div class="">
+    <h2 class="text-center fs-1 txtclr py-3">My Notes</h2>
+
+    <div class="container my-3">
+      <div class="row g-4">
+        @if(dataOfNote()){ @for (note of dataOfNote(); track $index) {
+        <div class="col-lg-4 col-xl-3 col-sm-6 col-md-6">
+          <div class="card txtclr mx-auto overflow-hidden">
+            <h3
+              class="text-center text-white border-1 pt-2 mb-0 border-top border-white"
+            >
+              {{ $index + 1 }}
+            </h3>
+            <div class="card-body my-1">
+              <h3 class="text-center text-capitalize">{{ note.title }}</h3>
+              <p class="text-capitalize overflow-y-scroll">
+                {{ note.content }}
+              </p>
+            </div>
+            <div class="mb-2 mt-0 d-flex justify-content-around">
+              <app-button
+                data-bs-toggle="modal"
+                data-bs-target="#modelOfDeletr"
+                type="button"
+                (click)="noteCardId(note._id)"
+                ><span style="color: rgb(255, 0, 89)"
+                  >Delete<i class="mx-1 fa-solid fa-trash"></i>
+                </span>
+              </app-button>
+
+              <app-button
+                data-bs-toggle="modal"
+                data-bs-target="#modelOfUpdate"
+                type="button"
+                (click)="noteCardId(note._id)"
+                (click)="retriveDataToForm(note.title, note.content)"
+                ><span style="color: rgb(14, 175, 255)"
+                  >Ubdate <i class="ms-1 fa-solid fa-file-pen"></i> </span
+              ></app-button>
+            </div>
+          </div>
+          <!-- model update -->
+        </div>
+        } }@else{
+        <h1 class="text-uppercase text-center">add your first not</h1>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- modelOfUpdate modal -->
+<app-model numberModel="modelOfUpdate">
+  <div class="modal-header bgclr">
+    <h1 class="modal-title fs-5" id="staticBackdropLabel">Update your note</h1>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="modal"
+      aria-label="Close"
+    ></button>
+  </div>
+  <form
+    class="p-3 text-start"
+    [formGroup]="updateNoteForm"
+    (ngSubmit)="submittUpdateForm()"
+  >
+    <label for="title" class="mb-1">Title:</label>
+    <input
+      id="title"
+      formControlName="title"
+      type="text"
+      class="mb-3 form-control"
+    />
+    <label for="content" class="mb-1">Content:</label>
+    <textarea formControlName="content" class="mb-3 form-control" id="content">
+    </textarea>
+
+    <div class="modal-footer py-1 bgclr">
+      <app-button data-bs-dismiss="modal" [typ]="'button'"
+        ><span> Cancel</span></app-button
+      >
+
+      <app-button
+        [typ]="'submite'"
+        [attr.data-bs-dismiss]="updateNoteForm.valid ? 'modal' : ' '"
+        ><span style="color: rgb(14, 175, 255)">
+          upDate <i class="ms-1 fa-solid fa-file-pen"></i> </span
+      ></app-button>
+    </div>
+  </form>
+</app-model>
+
+<!-- model delete -->
+<app-model numberModel="modelOfDeletr">
+  <div class="modal-body txtclr fs-4 py-4">
+    Are you sure of deleting this note !
+  </div>
+  <div class="modal-footer py-1 bgclr">
+    <app-button data-bs-dismiss="modal"><span> Cancel</span></app-button>
+
+    <app-button
+      (click)="deleteNote(noteId())"
+      [attr.data-bs-dismiss]="noteId() ? 'modal' : ''"
+      ><span>
+        Delete Note
+        <i class="ms-1 fa-solid fa-triangle-exclamation fa-fade"></i></span
+    ></app-button>
+  </div>
+</app-model>
+
+<!-- modal add note -->
+<app-model numberModel="staticBackdrop">
+  <div class="modal-header bgclr">
+    <h1 class="modal-title fs-5" id="staticBackdropLabel">Add your note</h1>
+
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="modal"
+      aria-label="Close"
+    ></button>
+  </div>
+  <form
+    class="p-3 text-start"
+    [formGroup]="addNoteForm"
+    (ngSubmit)="addNewNote()"
+  >
+    <label for="title" class="">Title:</label>
+    <input type="text" class="form-control" formControlName="title" />
+    <label for="content">Content:</label>
+    <textarea formControlName="content" class="mb-3 form-control"> </textarea>
+
+    <div class="modal-footer py-1 bgclr">
+      <app-button
+        (click)="clearForm(addNoteForm)"
+        [typ]="'button'"
+        data-bs-dismiss="modal"
+        ><span> Cancel</span></app-button
+      >
+
+      <app-button
+        [typ]="'submite'"
+        [attr.data-bs-dismiss]="addNoteForm.valid ? 'modal' : ' '"
+        ><span>
+          Add Note
+          <i class="fa-regular fa-thumbs-up"></i> </span
+      ></app-button>
+    </div>
+  </form>
+</app-model>

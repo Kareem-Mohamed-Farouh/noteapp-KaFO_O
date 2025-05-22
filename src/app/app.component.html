@@ -1,0 +1,24 @@
+<ngx-spinner
+  bdColor="rgba(255,64,129,0.2)"
+  size="medium"
+  color="#fff"
+  type="ball-circus"
+  name="spin1"
+  color="#ff4081"
+  [fullScreen]="true"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+
+<router-outlet></router-outlet>
+
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#fff"
+  name="spin2"
+  [fullScreen]="true"
+>
+  <img src="./images/2230140.png" class="w-25" />
+  <p style="color: white">Loading...</p>
+</ngx-spinner>

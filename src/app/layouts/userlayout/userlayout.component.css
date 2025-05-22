@@ -1,0 +1,7 @@
+.bg {
+  background-image: url(../../../../public/images/bghome.JPG);
+  background-position: center;
+  background-repeat: repeat;
+
+  background-size: cover;
+}
