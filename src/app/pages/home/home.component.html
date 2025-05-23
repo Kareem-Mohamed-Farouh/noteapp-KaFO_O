@@ -10,6 +10,21 @@
       firm ropes.<br />
       It is sheer folly to hunt a gazelle, Only to set it free among the people.
     </p>
+    <div class="form-floating w-25">
+      <input
+        type="search"
+        [(ngModel)]="titlekeyWordSearch"
+        class="form-control mx-auto w-100"
+        placeholder=""
+      />
+      <label
+        class="d-flex align-items-center justify-content-between"
+        for="search "
+      >
+        <i class="fa-solid fa-search me-1"> </i>
+        search by title ...
+      </label>
+    </div>
   </div>
 
   <div class="">
@@ -17,21 +32,21 @@
 
     <div class="container my-3">
       <div class="row g-4">
-        @if(dataOfNote()){ @for (note of dataOfNote(); track $index) {
+        @if(dataOfNote()) { @for (note of dataOfNote() | search :
+        titlekeyWordSearch() ; track $index) {
         <div class="col-lg-4 col-xl-3 col-sm-6 col-md-6">
           <div class="card txtclr mx-auto overflow-hidden">
-            <h3
-              class="text-center text-white border-1 pt-2 mb-0 border-top border-white"
-            >
-              {{ $index + 1 }}
-            </h3>
             <div class="card-body my-1">
-              <h3 class="text-center text-capitalize">{{ note.title }}</h3>
-              <p class="text-capitalize overflow-y-scroll">
+              <h3 class="text-capitalize text-center h4">
+                {{ note.title }}
+              </h3>
+              <p class="px-2 text-capitalize text-white overflow-y-scroll">
                 {{ note.content }}
               </p>
             </div>
-            <div class="mb-2 mt-0 d-flex justify-content-around">
+            <div
+              class="mb-2 mt-0 d-flex justify-content-around align-items-center"
+            >
               <app-button
                 data-bs-toggle="modal"
                 data-bs-target="#modelOfDeletr"
@@ -55,9 +70,13 @@
           </div>
           <!-- model update -->
         </div>
-        } }@else{
-        <h1 class="text-uppercase text-center">add your first not</h1>
-        }
+
+        }@empty {
+        <h1 class="text-uppercase text-center">
+          add your first note now <span class="txtclr">! !</span>
+        </h1>
+
+        } }
       </div>
     </div>
   </div>

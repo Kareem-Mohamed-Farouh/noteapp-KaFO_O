@@ -10,16 +10,24 @@ import { ModelComponent } from '../../core/shared/components/UI/model/model.comp
 import {
   FormBuilder,
   FormGroup,
+  FormsModule,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
 import { NoteService } from '../../core/services/note/note.service';
 import { ToastrService } from 'ngx-toastr';
 import { IUsernotedata } from '../../core/interfaces/usernotedata';
+import { SearchPipe } from '../../core/pipes/search/search.pipe';
 
 @Component({
   selector: 'app-home',
-  imports: [ButtonComponent, ModelComponent, ReactiveFormsModule],
+  imports: [
+    ButtonComponent,
+    ModelComponent,
+    ReactiveFormsModule,
+    FormsModule,
+    SearchPipe,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
@@ -30,6 +38,7 @@ export class HomeComponent implements OnInit {
   dataOfNote: WritableSignal<IUsernotedata[]> = signal([]);
   addNoteForm!: FormGroup;
   updateNoteForm!: FormGroup;
+  titlekeyWordSearch: WritableSignal<string> = signal('');
 
   ngOnInit(): void {
     this.addFormVlidate();

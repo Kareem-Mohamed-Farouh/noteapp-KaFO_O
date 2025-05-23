@@ -1,0 +1,81 @@
+p {
+  background-image: url(../../../../public/images/bghome.JPG);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 2px 0.125rem 0.125rem whitesmoke;
+
+  color: transparent;
+  animation: ani infinite 3s both;
+}
+
+@keyframes ani {
+  0% {
+    text-shadow: 2px 0.125rem 0.125rem whitesmoke;
+  }
+
+  50% {
+    text-shadow: 2px 0.125rem 0.25rem rgba(252, 209, 209, 0.741);
+  }
+
+  0% {
+    text-shadow: 2px 0.125rem 0.125rem whitesmoke;
+  }
+}
+
+img {
+}
+
+img:hover {
+}
+
+.card {
+  overflow: hidden;
+  box-shadow: 0.125rem 0.125rem 5px white !important;
+}
+
+i {
+  transform: rotate(360deg) scale(0.3);
+  font-size: 4rem;
+  color: rgb(251, 23, 107) !important;
+
+  opacity: 0;
+  transition: all 0.3s 0.3s;
+}
+
+.card-body:hover i {
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+}
+
+.card-body .content {
+  transform: translateY(100px) scale(0.5);
+
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.card-body:hover .content {
+  transform: translateY(0px) scale(1);
+  opacity: 1;
+}
+
+.card-body {
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.card:hover .card-body {
+  opacity: 1;
+}
+
+.new {
+  transform: translateX(200px);
+  transition: all 0.3s 0.3s;
+}
+.card-body:hover .new {
+  transform: translateX(0rem);
+}
+span {
+  font-size: 1rem;
+  background-color: rgb(251, 23, 107) !important;
+}
