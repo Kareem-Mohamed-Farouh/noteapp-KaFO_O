@@ -13,17 +13,17 @@ body {
   scroll-behavior: smooth;
 }
 body::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
 }
 
 body::-webkit-scrollbar-track {
-  background-color: #ffffff;
-  width: 0.725rem;
+  background-color: rgba(255, 255, 255, 0.256);
+  width: 5px;
   border-radius: 5px;
 }
 body::-webkit-scrollbar-thumb {
-  background-color: #f90764;
-  width: 10px;
+  background-color: #ff0048;
+  width: 5px;
   border-radius: 5px;
 }
 /* based on angular-toastr css https://github.com/Foxandxss/angular-toastr/blob/cb508fe6801d6b288d3afc525bb40fee1b101650/dist/angular-toastr.css */
@@ -172,10 +172,10 @@ button.toast-close-button {
   pointer-events: auto;
 }
 .toast-success {
-  background-color: #0ea104;
+  background-color: #1c0104d4;
 }
 .toast-error {
-  background-color: #fb477a;
+  background-color: #fa0303cf;
 }
 .toast-info {
   background-color: #1ea9d4;

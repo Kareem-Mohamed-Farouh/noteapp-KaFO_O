@@ -44,6 +44,7 @@ export class HomeComponent implements OnInit {
     this.addFormVlidate();
     this.updateFormVlidate();
   }
+
   addFormVlidate(): void {
     this.addNoteForm = this.formBuilder.group({
       title: [null, [Validators.required, Validators.minLength(3)]],

@@ -21,6 +21,8 @@ export class LoginComponent {
   private readonly authService = inject(AuthService);
   private readonly router = inject(Router);
   private readonly toastr = inject(ToastrService);
+  eyeIcon: string = 'fa-eye';
+
   myToken!: string;
 
   loginForm!: FormGroup;
@@ -51,27 +53,39 @@ export class LoginComponent {
           console.log('res', res);
           this.myToken = res.token;
           localStorage.setItem('notToken', this.myToken);
-          this.toastr.success(res.msg, '', {
+          this.toastr.success(res.msg, 'login succesfully', {
             timeOut: 2000,
             easing: 'ease-in-out',
-            positionClass: 'toast-top-center',
+            positionClass: 'toast-top-right',
+            closeButton: true,
+            tapToDismiss: true,
+            progressAnimation: 'decreasing',
             progressBar: true,
           });
           this.loginForm.reset();
           this.router.navigate(['/home']);
         },
-        error: (err) => {
-          console.log(err);
-          this.toastr.error(err.error.msg, '', {
-            timeOut: 1500,
-            easing: 'ease',
-            positionClass: 'toast-bottom-right',
-            progressBar: true,
-          });
-        },
+        // error: (err) => {
+        //   console.log(err);
+        //   this.toastr.error(err.error.msg, '', {
+        //     timeOut: 1500,
+        //     easing: 'ease',
+        //     positionClass: 'toast-bottom-right',
+        //     progressBar: true,
+        //   });
+        // },
       });
     } else {
       this.loginForm.markAllAsTouched();
+    }
+  }
+
+  x: boolean = false;
+  viewPass() {
+    if (this.x) {
+      this.x = false;
+    } else {
+      this.x = true;
     }
   }
 }

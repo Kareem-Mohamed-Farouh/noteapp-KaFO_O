@@ -6,7 +6,7 @@
   </h2>
   <div class="container d-flex align-items-center">
     <form
-      class="w-100 form-floating p-3 p border-1 border border-white rounded-3"
+      class="w-100 form-floating p-3 p border-1 border mt-3 border-white rounded-3"
       [formGroup]="loginForm"
       (ngSubmit)="submitRegister()"
     >
@@ -33,40 +33,50 @@
         <div
           class="text-capitalize fw-medium px-4 py-2 my-2 rounded-5 invalid-feedback"
         >
-          field it is required.
+          Email it is required.
         </div>
         } @else if(emailcontrol?.getError('email')){
         <div
           id="name"
           class="text-capitalize fw-medium px-4 py-2 my-3 rounded-5 invalid-feedback"
         >
-          Email Must Follow The instruction of writing Ex:asdf32&#64;gmail.com
+          Email Must Follow The instruction of writing Ex:kafo_o&#64;gmail.com
         </div>
         }
       </div>
 
       @let passwordcontrol =loginForm.get('password');
+
       <div class="form-floating">
         <input
-          type="password"
+          [type]="x ? 'text' : 'password'"
           [class.is-valid]="!passwordcontrol?.errors"
           [class.is-invalid]="
             passwordcontrol?.errors &&
             (passwordcontrol?.dirty || passwordcontrol?.touched)
           "
-          class="form-control"
+          class="form-control pe-3"
           id="floatingPassword"
           placeholder="password"
           formControlName="password"
         />
-        <label for="floatingPassword">Password</label>
-
+        <label for="floatingPassword"> Password </label>
+        <i
+          (click)="viewPass()"
+          [class.d-none]="!x"
+          class="fa-solid fa-eye position-absolute"
+        ></i>
+        <i
+          (click)="viewPass()"
+          [class.d-none]="x"
+          class="fa-solid fa-eye-slash position-absolute"
+        ></i>
         @if(passwordcontrol?.getError('required')){
 
         <div
           class="text-capitalize fw-medium px-4 py-2 my-2 rounded-5 invalid-feedback"
         >
-          this field it is required.
+          this password it is required.
         </div>
         } @else if(passwordcontrol?.getError('pattern')){
         <div

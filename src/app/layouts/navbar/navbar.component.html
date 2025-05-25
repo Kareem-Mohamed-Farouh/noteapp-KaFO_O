@@ -17,7 +17,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto fs-5 my-3">
+      <ul class="navbar-nav ms-auto fs-5 me-3 my-3">
         <li class="nav-item rounded-3 mx-2">
           <a
             class="nav-link text-white"
@@ -26,20 +26,31 @@
             >Home</a
           >
         </li>
-        <li class="nav-item mx-2">
+        <!-- <li class="nav-item mx-2">
           <a
             class="nav-link text-white"
             routerLink="/about"
             routerLinkActive="bgg rounded-3"
             >About</a
           >
-        </li>
+        </li> -->
         <li routerLinkActive="bgg rounded-3  mx-2" class="nav-item">
           <a class="nav-link text-white" routerLink="/gallary">Gallary</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link text-white   text-white" routerLink="/contact">Contact</a>
-        </li> -->
+        <li
+          class="nav-item logout"
+          data-bs-toggle="modal"
+          data-bs-target="#modelOflogOut"
+        >
+          <a class="nav-link text-white text-white bgg rounded-3 mx-2"
+            ><span>logOut</span>
+            <i
+              class="mx-1 fa-solid fa-arrow-right-from-bracket"
+              style="color: #ffffff"
+            >
+            </i
+          ></a>
+        </li>
       </ul>
     </div>
   </div>
@@ -67,7 +78,7 @@
       <ul class="navbar-nav ms-auto fs-3">
         <li class="nav-item">
           <a
-            class="nav-link text-white"
+            class="nav-link bgg text-white rounded-top-3 border-bottom border-4 border-white"
             routerLink="/login"
             routerLinkActive="d-none"
             >Login</a
@@ -75,7 +86,7 @@
         </li>
         <li class="nav-item">
           <a
-            class="nav-link text-white"
+            class="nav-link bgg text-white rounded-top-3 border-bottom border-4 border-white"
             routerLink="/register"
             routerLinkActive="d-none"
             >Register</a
@@ -87,3 +98,30 @@
 </nav>
 
 }
+<app-model numberModel="modelOflogOut">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Delete Note</h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="modal-body">Are you sure you want to logOUt</div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+        Close
+      </button>
+      <button
+        type="button"
+        class="btn btn-danger"
+        data-bs-dismiss="modal"
+        (click)="logOut()"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</app-model>

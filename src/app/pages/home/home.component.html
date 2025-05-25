@@ -5,12 +5,13 @@
     <span data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="button">
       <app-button><span>Add new NOTE 📓🖋️</span></app-button>
     </span>
-    <p class="text-white text-center fs-5 fw-light my-2">
+
+    <p class="text-white text-center fs-5 fw-light my-3">
       Knowledge is a prey, and writing is its tether. So bind your catches with
       firm ropes.<br />
       It is sheer folly to hunt a gazelle, Only to set it free among the people.
     </p>
-    <div class="form-floating w-25">
+    <div class="inputsearch form-floating w-25">
       <input
         type="search"
         [(ngModel)]="titlekeyWordSearch"
@@ -73,7 +74,9 @@
 
         }@empty {
         <h1 class="text-uppercase text-center">
-          add your first note now <span class="txtclr">! !</span>
+          add <span class="txtclr">your </span> first
+          <span class="txtclr">note</span> now
+          <span class="txtclr">! !</span>
         </h1>
 
         } }
