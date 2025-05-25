@@ -49,3 +49,7 @@ nav ul li {
     opacity: 1;
   }
 }
+
+a {
+  text-shadow: 3px 3px 4px #fe0468;
+}
