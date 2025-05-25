@@ -83,7 +83,7 @@
       </div>
 
       @let passwordcontrol =registerForm.get('password');
-      <div class="form-floating">
+      <div class="my-3 form-floating">
         <input
           type="password"
           [class.is-valid]="!passwordcontrol?.errors"
@@ -125,7 +125,7 @@
       </div>
       @let agecontrol=registerForm.get('age');
 
-      <div class="my-2 form-floating">
+      <div class="my-3 form-floating">
         <input
           [class.is-valid]="!agecontrol?.errors"
           [class.is-invalid]="
