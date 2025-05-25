@@ -64,10 +64,10 @@ export class RegisterComponent implements OnInit {
         next: (res) => {
           console.log('res', res);
 
-          this.toastr.success(res.msg, '', {
+          this.toastr.success('successfully operation ', '', {
             timeOut: 2000,
             easing: 'ease-in-out',
-            positionClass: 'toast-top-center',
+            positionClass: 'toast-top-right',
             progressBar: true,
           });
           this.registerForm.reset();
