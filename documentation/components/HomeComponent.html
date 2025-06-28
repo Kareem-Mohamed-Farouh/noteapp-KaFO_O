@@ -1,0 +1,1486 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>noteapp documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">noteapp documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  HomeComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/home/home.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-home</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                                <code><a href="../components/ButtonComponent.html" target="_self" >ButtonComponent</a></code>
+                                <code><a href="../components/ModelComponent.html" target="_self" >ModelComponent</a></code>
+                            <code>ReactiveFormsModule</code>
+                            <code>FormsModule</code>
+                            <code>SearchPipe</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./home.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./home.component.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addNoteForm" >addNoteForm</a>
+                            </li>
+                            <li>
+                                <a href="#dataOfNote" >dataOfNote</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#formBuilder" >formBuilder</a>
+                            </li>
+                            <li>
+                                <a href="#noteId" >noteId</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#noteService" >noteService</a>
+                            </li>
+                            <li>
+                                <a href="#titlekeyWordSearch" >titlekeyWordSearch</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#toastr" >toastr</a>
+                            </li>
+                            <li>
+                                <a href="#updateNoteForm" >updateNoteForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addFormVlidate" >addFormVlidate</a>
+                            </li>
+                            <li>
+                                <a href="#addNewNote" >addNewNote</a>
+                            </li>
+                            <li>
+                                <a href="#clearForm" >clearForm</a>
+                            </li>
+                            <li>
+                                <a href="#deleteNote" >deleteNote</a>
+                            </li>
+                            <li>
+                                <a href="#displayMyNote" >displayMyNote</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#noteCardId" >noteCardId</a>
+                            </li>
+                            <li>
+                                <a href="#retriveDataToForm" >retriveDataToForm</a>
+                            </li>
+                            <li>
+                                <a href="#submittUpdateForm" >submittUpdateForm</a>
+                            </li>
+                            <li>
+                                <a href="#updateFormVlidate" >updateFormVlidate</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addFormVlidate"></a>
+                    <span class="name">
+                        <span ><b>addFormVlidate</b></span>
+                        <a href="#addFormVlidate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addFormVlidate()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="48"
+                                    class="link-to-prism">src/app/pages/home/home.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addNewNote"></a>
+                    <span class="name">
+                        <span ><b>addNewNote</b></span>
+                        <a href="#addNewNote"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addNewNote()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="63"
+                                    class="link-to-prism">src/app/pages/home/home.component.ts:63</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clearForm"></a>
+                    <span class="name">
+                        <span ><b>clearForm</b></span>
+                        <a href="#clearForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>clearForm(spicificForm: FormGroup)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="141"
+                                    class="link-to-prism">src/app/pages/home/home.component.ts:141</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>spicificForm</td>
+                                            <td>
+                                                        <code>FormGroup</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteNote"></a>
+                    <span class="name">
+                        <span ><b>deleteNote</b></span>
+                        <a href="#deleteNote"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteNote(noteId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="101"
+                                    class="link-to-prism">src/app/pages/home/home.component.ts:101</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>noteId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayMyNote"></a>
+                    <span class="name">
+                        <span ><b>displayMyNote</b></span>
+                        <a href="#displayMyNote"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>displayMyNote()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="81"
+                                    class="link-to-prism">src/app/pages/home/home.component.ts:81</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="43"
+                                    class="link-to-prism">src/app/pages/home/home.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="noteCardId"></a>
+                    <span class="name">
+                        <span ><b>noteCardId</b></span>
+                        <a href="#noteCardId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>noteCardId(noteId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="118"
+                                    class="link-to-prism">src/app/pages/home/home.component.ts:118</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>noteId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="retriveDataToForm"></a>
+                    <span class="name">
+                        <span ><b>retriveDataToForm</b></span>
+                        <a href="#retriveDataToForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>retriveDataToForm(title: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, content: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="122"
+                                    class="link-to-prism">src/app/pages/home/home.component.ts:122</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>title</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>content</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submittUpdateForm"></a>
+                    <span class="name">
+                        <span ><b>submittUpdateForm</b></span>
+                        <a href="#submittUpdateForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>submittUpdateForm()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="127"
+                                    class="link-to-prism">src/app/pages/home/home.component.ts:127</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateFormVlidate"></a>
+                    <span class="name">
+                        <span ><b>updateFormVlidate</b></span>
+                        <a href="#updateFormVlidate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateFormVlidate()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="55"
+                                    class="link-to-prism">src/app/pages/home/home.component.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addNoteForm"></a>
+                    <span class="name">
+                        <span ><b>addNoteForm</b></span>
+                        <a href="#addNoteForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/pages/home/home.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataOfNote"></a>
+                    <span class="name">
+                        <span ><b>dataOfNote</b></span>
+                        <a href="#dataOfNote"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IUsernotedata.html" target="_self" >WritableSignal&lt;IUsernotedata[]&gt;</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal([])</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/pages/home/home.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formBuilder"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>formBuilder</b></span>
+                        <a href="#formBuilder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(FormBuilder)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/pages/home/home.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="noteId"></a>
+                    <span class="name">
+                        <span ><b>noteId</b></span>
+                        <a href="#noteId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>WritableSignal&lt;string&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal(&#x27;&#x27;)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="117" class="link-to-prism">src/app/pages/home/home.component.ts:117</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="noteService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>noteService</b></span>
+                        <a href="#noteService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(NoteService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/pages/home/home.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="titlekeyWordSearch"></a>
+                    <span class="name">
+                        <span ><b>titlekeyWordSearch</b></span>
+                        <a href="#titlekeyWordSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>WritableSignal&lt;string&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal(&#x27;&#x27;)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/pages/home/home.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toastr"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>toastr</b></span>
+                        <a href="#toastr"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ToastrService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/pages/home/home.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateNoteForm"></a>
+                    <span class="name">
+                        <span ><b>updateNoteForm</b></span>
+                        <a href="#updateNoteForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/pages/home/home.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  Component,
+  inject,
+  OnInit,
+  signal,
+  WritableSignal,
+} from &#x27;@angular/core&#x27;;
+import { ButtonComponent } from &#x27;../../core/shared/components/UI/button/button.component&#x27;;
+import { ModelComponent } from &#x27;../../core/shared/components/UI/model/model.component&#x27;;
+import {
+  FormBuilder,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from &#x27;@angular/forms&#x27;;
+import { NoteService } from &#x27;../../core/services/note/note.service&#x27;;
+import { ToastrService } from &#x27;ngx-toastr&#x27;;
+import { IUsernotedata } from &#x27;../../core/interfaces/usernotedata&#x27;;
+import { SearchPipe } from &#x27;../../core/pipes/search/search.pipe&#x27;;
+
+@Component({
+  selector: &#x27;app-home&#x27;,
+  imports: [
+    ButtonComponent,
+    ModelComponent,
+    ReactiveFormsModule,
+    FormsModule,
+    SearchPipe,
+  ],
+  templateUrl: &#x27;./home.component.html&#x27;,
+  styleUrl: &#x27;./home.component.css&#x27;,
+})
+export class HomeComponent implements OnInit {
+  private formBuilder &#x3D; inject(FormBuilder);
+  private toastr &#x3D; inject(ToastrService);
+  private noteService &#x3D; inject(NoteService);
+  dataOfNote: WritableSignal&lt;IUsernotedata[]&gt; &#x3D; signal([]);
+  addNoteForm!: FormGroup;
+  updateNoteForm!: FormGroup;
+  titlekeyWordSearch: WritableSignal&lt;string&gt; &#x3D; signal(&#x27;&#x27;);
+
+  ngOnInit(): void {
+    this.addFormVlidate();
+    this.updateFormVlidate();
+  }
+
+  addFormVlidate(): void {
+    this.addNoteForm &#x3D; this.formBuilder.group({
+      title: [null, [Validators.required, Validators.minLength(3)]],
+      content: [null, [Validators.required, Validators.minLength(3)]],
+    });
+  }
+
+  updateFormVlidate(): void {
+    this.updateNoteForm &#x3D; this.formBuilder.group({
+      title: [null, [Validators.required, Validators.minLength(3)]],
+      content: [null, [Validators.required, Validators.minLength(3)]],
+    });
+    this.displayMyNote();
+  }
+
+  addNewNote(): void {
+    console.log(this.addNoteForm.value);
+    if (this.addNoteForm.valid) {
+      this.noteService.addNote(this.addNoteForm.value).subscribe({
+        next: (res) &#x3D;&gt; {
+          console.log(res.msg &#x3D;&#x3D;&#x3D; &#x27;done&#x27;);
+          if (res.msg &#x3D;&#x3D;&#x3D; &#x27;done&#x27;) {
+            this.toastr.success(&#x27;your Note Added successfuly&#x27;);
+            this.displayMyNote();
+            this.clearForm(this.addNoteForm);
+          }
+        },
+      });
+    } else {
+      this.toastr.error(&#x27;Each input must contain atleast 3 character&#x27;);
+    }
+  }
+
+  displayMyNote(): void {
+    this.noteService.getUserNotes().subscribe({
+      next: (res) &#x3D;&gt; {
+        console.log(&#x27;mynote&#x27;, res);
+        if (res.msg &#x3D;&#x3D;&#x3D; &#x27;done&#x27;) {
+          this.dataOfNote.set(res.notes);
+        }
+      },
+      error: (err) &#x3D;&gt; {
+        console.log(err);
+
+        if (err &#x3D;&#x3D; undefined) {
+          this.dataOfNote.set([]);
+          // console.log(&#x27;mashy ya kemo&#x27;);
+          // this.toastr.success(&#x27;Add New Notes&#x27;);
+        }
+      },
+    });
+  }
+
+  deleteNote(noteId: string): void {
+    this.noteService.deleteNote(noteId).subscribe({
+      next: (res) &#x3D;&gt; {
+        console.log(res);
+        if (res.msg &#x3D;&#x3D;&#x3D; &#x27;done&#x27;) {
+          this.toastr.success(&#x27;your note deleted succesfully&#x27;);
+
+          this.displayMyNote();
+        }
+      },
+      error: (err) &#x3D;&gt; {
+        console.log(err);
+      },
+    });
+  }
+
+  noteId: WritableSignal&lt;string&gt; &#x3D; signal(&#x27;&#x27;);
+  noteCardId(noteId: string): void {
+    this.noteId.set(noteId);
+  }
+
+  retriveDataToForm(title: string, content: string): void {
+    this.updateNoteForm.get(&#x27;title&#x27;)?.patchValue(title);
+    this.updateNoteForm.get(&#x27;content&#x27;)?.patchValue(content);
+  }
+
+  submittUpdateForm(): void {
+    if (this.updateNoteForm.value) {
+      this.noteService
+        .updateNote(this.noteId(), this.updateNoteForm.value)
+        .subscribe({
+          next: (res) &#x3D;&gt; {
+            console.log(res);
+            this.updateNoteForm.reset();
+            this.displayMyNote();
+          },
+        });
+    }
+  }
+
+  clearForm(spicificForm: FormGroup) {
+    spicificForm.reset();
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;section class&#x3D;&quot;min-vh-100 w-100&quot;&gt;
+  &lt;div
+    class&#x3D;&quot;bg-black pb-3 d-flex justify-content-center flex-column align-items-center&quot;
+  &gt;
+    &lt;span data-bs-toggle&#x3D;&quot;modal&quot; data-bs-target&#x3D;&quot;#staticBackdrop&quot; type&#x3D;&quot;button&quot;&gt;
+      &lt;app-button&gt;&lt;span&gt;Add new NOTE 📓🖋️&lt;/span&gt;&lt;/app-button&gt;
+    &lt;/span&gt;
+
+    &lt;p class&#x3D;&quot;text-white text-center fs-5 fw-light my-3&quot;&gt;
+      Knowledge is a prey, and writing is its tether. So bind your catches with
+      firm ropes.&lt;br /&gt;
+      It is sheer folly to hunt a gazelle, Only to set it free among the people.
+    &lt;/p&gt;
+    &lt;div class&#x3D;&quot;inputsearch form-floating w-25&quot;&gt;
+      &lt;input
+        type&#x3D;&quot;search&quot;
+        [(ngModel)]&#x3D;&quot;titlekeyWordSearch&quot;
+        class&#x3D;&quot;form-control mx-auto w-100&quot;
+        placeholder&#x3D;&quot;&quot;
+      /&gt;
+      &lt;label
+        class&#x3D;&quot;d-flex align-items-center justify-content-between&quot;
+        for&#x3D;&quot;search &quot;
+      &gt;
+        &lt;i class&#x3D;&quot;fa-solid fa-search me-1&quot;&gt; &lt;/i&gt;
+        search by title ...
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;&quot;&gt;
+    &lt;h2 class&#x3D;&quot;text-center fs-1 txtclr py-3&quot;&gt;My Notes&lt;/h2&gt;
+
+    &lt;div class&#x3D;&quot;container my-3&quot;&gt;
+      &lt;div class&#x3D;&quot;row g-4&quot;&gt;
+        @if(dataOfNote()) { @for (note of dataOfNote() | search :
+        titlekeyWordSearch() ; track $index) {
+        &lt;div class&#x3D;&quot;col-lg-4 col-xl-3 col-sm-6 col-md-6&quot;&gt;
+          &lt;div class&#x3D;&quot;card txtclr mx-auto overflow-hidden&quot;&gt;
+            &lt;div class&#x3D;&quot;card-body my-1&quot;&gt;
+              &lt;h3 class&#x3D;&quot;text-capitalize text-center h4&quot;&gt;
+                {{ note.title }}
+              &lt;/h3&gt;
+              &lt;p class&#x3D;&quot;px-2 text-capitalize text-white overflow-y-scroll&quot;&gt;
+                {{ note.content }}
+              &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div
+              class&#x3D;&quot;mb-2 mt-0 d-flex justify-content-around align-items-center&quot;
+            &gt;
+              &lt;app-button
+                data-bs-toggle&#x3D;&quot;modal&quot;
+                data-bs-target&#x3D;&quot;#modelOfDeletr&quot;
+                type&#x3D;&quot;button&quot;
+                (click)&#x3D;&quot;noteCardId(note._id)&quot;
+                &gt;&lt;span style&#x3D;&quot;color: rgb(255, 0, 89)&quot;
+                  &gt;Delete&lt;i class&#x3D;&quot;mx-1 fa-solid fa-trash&quot;&gt;&lt;/i&gt;
+                &lt;/span&gt;
+              &lt;/app-button&gt;
+
+              &lt;app-button
+                data-bs-toggle&#x3D;&quot;modal&quot;
+                data-bs-target&#x3D;&quot;#modelOfUpdate&quot;
+                type&#x3D;&quot;button&quot;
+                (click)&#x3D;&quot;noteCardId(note._id)&quot;
+                (click)&#x3D;&quot;retriveDataToForm(note.title, note.content)&quot;
+                &gt;&lt;span style&#x3D;&quot;color: rgb(14, 175, 255)&quot;
+                  &gt;Ubdate &lt;i class&#x3D;&quot;ms-1 fa-solid fa-file-pen&quot;&gt;&lt;/i&gt; &lt;/span
+              &gt;&lt;/app-button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;!-- model update --&gt;
+        &lt;/div&gt;
+
+        }@empty {
+        &lt;h1 class&#x3D;&quot;text-uppercase text-center&quot;&gt;
+          &lt;span class&#x3D;&quot;txtclr&quot;&gt;No&lt;/span&gt; Note
+          &lt;span class&#x3D;&quot;txtclr&quot;&gt; ! !&lt;/span&gt; add
+          &lt;span class&#x3D;&quot;txtclr&quot;&gt;new one &lt;/span&gt;
+        &lt;/h1&gt;
+
+        } }
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- modelOfUpdate modal --&gt;
+&lt;app-model numberModel&#x3D;&quot;modelOfUpdate&quot;&gt;
+  &lt;div class&#x3D;&quot;modal-header bgclr&quot;&gt;
+    &lt;h1 class&#x3D;&quot;modal-title fs-5&quot; id&#x3D;&quot;staticBackdropLabel&quot;&gt;Update your note&lt;/h1&gt;
+    &lt;button
+      type&#x3D;&quot;button&quot;
+      class&#x3D;&quot;btn-close&quot;
+      data-bs-dismiss&#x3D;&quot;modal&quot;
+      aria-label&#x3D;&quot;Close&quot;
+    &gt;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;form
+    class&#x3D;&quot;p-3 text-start&quot;
+    [formGroup]&#x3D;&quot;updateNoteForm&quot;
+    (ngSubmit)&#x3D;&quot;submittUpdateForm()&quot;
+  &gt;
+    &lt;label for&#x3D;&quot;title&quot; class&#x3D;&quot;mb-1&quot;&gt;Title:&lt;/label&gt;
+    &lt;input
+      id&#x3D;&quot;title&quot;
+      formControlName&#x3D;&quot;title&quot;
+      type&#x3D;&quot;text&quot;
+      class&#x3D;&quot;mb-3 form-control&quot;
+    /&gt;
+    &lt;label for&#x3D;&quot;content&quot; class&#x3D;&quot;mb-1&quot;&gt;Content:&lt;/label&gt;
+    &lt;textarea formControlName&#x3D;&quot;content&quot; class&#x3D;&quot;mb-3 form-control&quot; id&#x3D;&quot;content&quot;&gt;
+    &lt;/textarea&gt;
+
+    &lt;div class&#x3D;&quot;modal-footer py-1 bgclr&quot;&gt;
+      &lt;app-button data-bs-dismiss&#x3D;&quot;modal&quot; [typ]&#x3D;&quot;&#x27;button&#x27;&quot;
+        &gt;&lt;span&gt; Cancel&lt;/span&gt;&lt;/app-button
+      &gt;
+
+      &lt;app-button
+        [typ]&#x3D;&quot;&#x27;submite&#x27;&quot;
+        [attr.data-bs-dismiss]&#x3D;&quot;updateNoteForm.valid ? &#x27;modal&#x27; : &#x27; &#x27;&quot;
+        &gt;&lt;span style&#x3D;&quot;color: rgb(14, 175, 255)&quot;&gt;
+          upDate &lt;i class&#x3D;&quot;ms-1 fa-solid fa-file-pen&quot;&gt;&lt;/i&gt; &lt;/span
+      &gt;&lt;/app-button&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+&lt;/app-model&gt;
+
+&lt;!-- model delete --&gt;
+&lt;app-model numberModel&#x3D;&quot;modelOfDeletr&quot;&gt;
+  &lt;div class&#x3D;&quot;modal-body txtclr fs-4 py-4&quot;&gt;
+    Are you sure of deleting this note !
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;modal-footer py-1 bgclr&quot;&gt;
+    &lt;app-button data-bs-dismiss&#x3D;&quot;modal&quot;&gt;&lt;span&gt; Cancel&lt;/span&gt;&lt;/app-button&gt;
+
+    &lt;app-button
+      (click)&#x3D;&quot;deleteNote(noteId())&quot;
+      [attr.data-bs-dismiss]&#x3D;&quot;noteId() ? &#x27;modal&#x27; : &#x27;&#x27;&quot;
+      &gt;&lt;span&gt;
+        Delete Note
+        &lt;i class&#x3D;&quot;ms-1 fa-solid fa-triangle-exclamation fa-fade&quot;&gt;&lt;/i&gt;&lt;/span
+    &gt;&lt;/app-button&gt;
+  &lt;/div&gt;
+&lt;/app-model&gt;
+
+&lt;!-- modal add note --&gt;
+&lt;app-model numberModel&#x3D;&quot;staticBackdrop&quot;&gt;
+  &lt;div class&#x3D;&quot;modal-header bgclr&quot;&gt;
+    &lt;h1 class&#x3D;&quot;modal-title fs-5&quot; id&#x3D;&quot;staticBackdropLabel&quot;&gt;Add your note&lt;/h1&gt;
+
+    &lt;button
+      type&#x3D;&quot;button&quot;
+      class&#x3D;&quot;btn-close&quot;
+      data-bs-dismiss&#x3D;&quot;modal&quot;
+      aria-label&#x3D;&quot;Close&quot;
+    &gt;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;form
+    class&#x3D;&quot;p-3 text-start&quot;
+    [formGroup]&#x3D;&quot;addNoteForm&quot;
+    (ngSubmit)&#x3D;&quot;addNewNote()&quot;
+  &gt;
+    &lt;label for&#x3D;&quot;title&quot; class&#x3D;&quot;&quot;&gt;Title:&lt;/label&gt;
+    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;title&quot; /&gt;
+    &lt;label for&#x3D;&quot;content&quot;&gt;Content:&lt;/label&gt;
+    &lt;textarea formControlName&#x3D;&quot;content&quot; class&#x3D;&quot;mb-3 form-control&quot;&gt; &lt;/textarea&gt;
+
+    &lt;div class&#x3D;&quot;modal-footer py-1 bgclr&quot;&gt;
+      &lt;app-button
+        (click)&#x3D;&quot;clearForm(addNoteForm)&quot;
+        [typ]&#x3D;&quot;&#x27;button&#x27;&quot;
+        data-bs-dismiss&#x3D;&quot;modal&quot;
+        &gt;&lt;span&gt; Cancel&lt;/span&gt;&lt;/app-button
+      &gt;
+
+      &lt;app-button
+        [typ]&#x3D;&quot;&#x27;submite&#x27;&quot;
+        [attr.data-bs-dismiss]&#x3D;&quot;addNoteForm.valid ? &#x27;modal&#x27; : &#x27; &#x27;&quot;
+        &gt;&lt;span&gt;
+          Add Note
+          &lt;i class&#x3D;&quot;fa-regular fa-thumbs-up&quot;&gt;&lt;/i&gt; &lt;/span
+      &gt;&lt;/app-button&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+&lt;/app-model&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><section class="min-vh-100 w-100">  <div    class="bg-black pb-3 d-flex justify-content-center flex-column align-items-center"  >    <span data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="button">      <app-button><span>Add new NOTE 📓🖋️</span></app-button>    </span>    <p class="text-white text-center fs-5 fw-light my-3">      Knowledge is a prey, and writing is its tether. So bind your catches with      firm ropes.<br />      It is sheer folly to hunt a gazelle, Only to set it free among the people.    </p>    <div class="inputsearch form-floating w-25">      <input        type="search"        [(ngModel)]="titlekeyWordSearch"        class="form-control mx-auto w-100"        placeholder=""      />      <label        class="d-flex align-items-center justify-content-between"        for="search "      >        <i class="fa-solid fa-search me-1"> </i>        search by title ...      </label>    </div>  </div>  <div class="">    <h2 class="text-center fs-1 txtclr py-3">My Notes</h2>    <div class="container my-3">      <div class="row g-4">        @if(dataOfNote()) { @for (note of dataOfNote() | search :        titlekeyWordSearch() ; track $index) {        <div class="col-lg-4 col-xl-3 col-sm-6 col-md-6">          <div class="card txtclr mx-auto overflow-hidden">            <div class="card-body my-1">              <h3 class="text-capitalize text-center h4">                {{ note.title }}              </h3>              <p class="px-2 text-capitalize text-white overflow-y-scroll">                {{ note.content }}              </p>            </div>            <div              class="mb-2 mt-0 d-flex justify-content-around align-items-center"            >              <app-button                data-bs-toggle="modal"                data-bs-target="#modelOfDeletr"                type="button"                (click)="noteCardId(note._id)"                ><span style="color: rgb(255, 0, 89)"                  >Delete<i class="mx-1 fa-solid fa-trash"></i>                </span>              </app-button>              <app-button                data-bs-toggle="modal"                data-bs-target="#modelOfUpdate"                type="button"                (click)="noteCardId(note._id)"                (click)="retriveDataToForm(note.title, note.content)"                ><span style="color: rgb(14, 175, 255)"                  >Ubdate <i class="ms-1 fa-solid fa-file-pen"></i> </span              ></app-button>            </div>          </div>          <!-- model update -->        </div>        }@empty {        <h1 class="text-uppercase text-center">          <span class="txtclr">No</span> Note          <span class="txtclr"> ! !</span> add          <span class="txtclr">new one </span>        </h1>        } }      </div>    </div>  </div></section><!-- modelOfUpdate modal --><app-model numberModel="modelOfUpdate">  <div class="modal-header bgclr">    <h1 class="modal-title fs-5" id="staticBackdropLabel">Update your note</h1>    <button      type="button"      class="btn-close"      data-bs-dismiss="modal"      aria-label="Close"    ></button>  </div>  <form    class="p-3 text-start"    [formGroup]="updateNoteForm"    (ngSubmit)="submittUpdateForm()"  >    <label for="title" class="mb-1">Title:</label>    <input      id="title"      formControlName="title"      type="text"      class="mb-3 form-control"    />    <label for="content" class="mb-1">Content:</label>    <textarea formControlName="content" class="mb-3 form-control" id="content">    </textarea>    <div class="modal-footer py-1 bgclr">      <app-button data-bs-dismiss="modal" [typ]="\'button\'"        ><span> Cancel</span></app-button      >      <app-button        [typ]="\'submite\'"        [attr.data-bs-dismiss]="updateNoteForm.valid ? \'modal\' : \' \'"        ><span style="color: rgb(14, 175, 255)">          upDate <i class="ms-1 fa-solid fa-file-pen"></i> </span      ></app-button>    </div>  </form></app-model><!-- model delete --><app-model numberModel="modelOfDeletr">  <div class="modal-body txtclr fs-4 py-4">    Are you sure of deleting this note !  </div>  <div class="modal-footer py-1 bgclr">    <app-button data-bs-dismiss="modal"><span> Cancel</span></app-button>    <app-button      (click)="deleteNote(noteId())"      [attr.data-bs-dismiss]="noteId() ? \'modal\' : \'\'"      ><span>        Delete Note        <i class="ms-1 fa-solid fa-triangle-exclamation fa-fade"></i></span    ></app-button>  </div></app-model><!-- modal add note --><app-model numberModel="staticBackdrop">  <div class="modal-header bgclr">    <h1 class="modal-title fs-5" id="staticBackdropLabel">Add your note</h1>    <button      type="button"      class="btn-close"      data-bs-dismiss="modal"      aria-label="Close"    ></button>  </div>  <form    class="p-3 text-start"    [formGroup]="addNoteForm"    (ngSubmit)="addNewNote()"  >    <label for="title" class="">Title:</label>    <input type="text" class="form-control" formControlName="title" />    <label for="content">Content:</label>    <textarea formControlName="content" class="mb-3 form-control"> </textarea>    <div class="modal-footer py-1 bgclr">      <app-button        (click)="clearForm(addNoteForm)"        [typ]="\'button\'"        data-bs-dismiss="modal"        ><span> Cancel</span></app-button      >      <app-button        [typ]="\'submite\'"        [attr.data-bs-dismiss]="addNoteForm.valid ? \'modal\' : \' \'"        ><span>          Add Note          <i class="fa-regular fa-thumbs-up"></i> </span      ></app-button>    </div>  </form></app-model></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthlayoutComponent', 'selector': 'app-authlayout'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GallaryComponent', 'selector': 'app-gallary'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MessagealertComponent', 'selector': 'app-messagealert'},{'name': 'ModelComponent', 'selector': 'app-model'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'UserlayoutComponent', 'selector': 'app-userlayout'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'HomeComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'HomeComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
